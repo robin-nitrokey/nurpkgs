@@ -1,4 +1,9 @@
-{ fetchPypi, python3Packages, pythonNethsm, pythonNitrokey }:
+{
+  fetchPypi,
+  python3Packages,
+  pythonNethsm,
+  pythonNitrokey,
+}:
 python3Packages.buildPythonApplication rec {
   pname = "pynitrokey";
   version = "0.6.0";
@@ -9,13 +14,9 @@ python3Packages.buildPythonApplication rec {
     hash = "sha256-pY6ATORZDPGRnkN6dse1s/DzQRpplDbPAGUHU4E7U9M=";
   };
 
-  nativeBuildInputs = [
-    python3Packages.pythonRelaxDepsHook
-  ];
+  nativeBuildInputs = [ python3Packages.pythonRelaxDepsHook ];
 
-  build-system = [
-    python3Packages.flit-core
-  ];
+  build-system = [ python3Packages.flit-core ];
 
   dependencies = with python3Packages; [
     certifi
@@ -40,9 +41,7 @@ python3Packages.buildPythonApplication rec {
     asn1crypto
   ];
 
-  pypaBuildFlags = [
-    "--skip-dependency-check"
-  ];
+  pypaBuildFlags = [ "--skip-dependency-check" ];
 
   pythonRelaxDeps = [
     "click"

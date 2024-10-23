@@ -3,19 +3,15 @@ python3Packages.buildPythonPackage rec {
   pname = "nethsm";
   version = "1.2.1";
   pyproject = true;
-  
+
   src = fetchPypi {
     inherit pname version;
     hash = "sha256-EPxGJFCGGl3p3yLlM7NH7xtEVS2woRigKJhL57A0gAE=";
   };
 
-  nativeBuildInputs = [
-    python3Packages.pythonRelaxDepsHook
-  ];
+  nativeBuildInputs = [ python3Packages.pythonRelaxDepsHook ];
 
-  build-system = [
-    python3Packages.flit-core
-  ];
+  build-system = [ python3Packages.flit-core ];
 
   dependencies = with python3Packages; [
     certifi
@@ -25,9 +21,7 @@ python3Packages.buildPythonPackage rec {
     urllib3
   ];
 
-  pythonImportsCheck = [
-    "nethsm"
-  ];
+  pythonImportsCheck = [ "nethsm" ];
 
   pythonRelaxDeps = [
     "typing_extensions"
