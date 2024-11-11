@@ -9,6 +9,7 @@ let
     pythonNethsm = callPackage ./pkgs/python-nethsm { };
     pythonNitrokey = callPackage ./pkgs/python-nitrokey { };
     pynitrokey = callPackage ./pkgs/pynitrokey { };
+    segger-jlink-cli = callPackage ./pkgs/segger-jlink-cli { };
   };
 in
 nurpkgs
