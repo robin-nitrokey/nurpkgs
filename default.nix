@@ -7,6 +7,7 @@ let
   nurpkgs = {
     lpc55-host = callPackage ./pkgs/lpc55-host { };
     nethsm-pkcs11 = callPackage ./pkgs/nethsm-pkcs11 { };
+    pivy-tool = callPackage ./pkgs/pivy-tool { };
     pythonNethsm = callPackage ./pkgs/python-nethsm { };
     pythonNitrokey = callPackage ./pkgs/python-nitrokey { };
     pynitrokey = callPackage ./pkgs/pynitrokey { };
