@@ -6,10 +6,13 @@
   boost,
   cmake,
   fetchFromGitHub,
-  pc-ble-driver,
   git,
   swig,
 }:
+let
+  nixpkgs2505 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/ac62194c3917d5f474c1a844b6fd6da2db95077d.tar.gz") {};
+  pc-ble-driver = nixpkgs2505.pc-ble-driver;
+in
 python3.pkgs.buildPythonPackage rec {
   pname = "pc-ble-driver-py";
   version = "0.17.0";

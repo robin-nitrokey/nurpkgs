@@ -58,4 +58,7 @@ python3.pkgs.buildPythonApplication rec {
     "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"
     "python"
   ];
+
+  pyproject = true;
+  build-system = [ python3.pkgs.setuptools ];
 }
